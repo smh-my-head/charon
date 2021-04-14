@@ -2,11 +2,6 @@
 The ferryman to Hell (aka CAD version control). Provides integration with git
 for SolidWorks parts and assemblies.
 
-Don't be fooled by the name on the repo or the number of commits,
-@henryefranks has made more impressive contributions to this project than I
-have. (I would never be able to handle writing basic for poorly documented
-libraries...)
-
 ## Usage
 
 Add this repo as a submodule and then run `./sldworks-git-tools/setup.sh` from
