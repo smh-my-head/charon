@@ -1,0 +1,31 @@
+name: Charon Build
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+      - name: Prepare
+        run: |
+          git clone https://github.com/smh-my-head/charon
+          git clone git@github.com:smh-my-head/charon-build-assets
+          mkdir charon/compare/build
+          cp charon-build-assets/* charon/compare/build
+
+      - name: Build
+        run: |
+          cd charon/compare
+          dotnet.exe publish -r win-x64 -o build --nologo --configuration "Release" /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            charon/compare/build/compare.exe

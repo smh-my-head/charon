@@ -64,7 +64,6 @@ if ! $driver --check-health; then
 	echo "File $1 differs"
 else
 	echo "Opening $prog_name to diff $1..."
-	echo "$prog_name must exit fully before this diff can exit"
 	$driver $left_filename $right_filename
 fi
 
