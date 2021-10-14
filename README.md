@@ -1,14 +1,10 @@
 # Charon
 The ferryman to Hell (aka CAD version control). Provides integration with git
-for SolidWorks parts and assemblies.
+for SolidWorks parts and assemblies. Fully integrated with [Hades](https://github.com/smh-my-head/hades)
 
 ## Usage
 
-Add this repo as a submodule and then run `./charon/setup.sh` from Git Bash or
-MSYS2. You can then use git as normal, but `git diff` and `git merge` will have
-added sugar. If you use Linux, check out
-[hades](https://github.com/smh-my-head/hades), as the two projects are fully
-integrated.
+See the CUSF wiki page on [Charon](https://wiki.cusf.co.uk/Charon).
 
 You will also need to enable *SOLIDWORKS Utilities* at startup, you can do this
 by navigating (in SolidWorks) to *Tools->Add-Ins* and checking the box for
